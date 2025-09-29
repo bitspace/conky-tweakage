@@ -1,0 +1,12 @@
+[Unit]
+Description=Conky instance %i
+After=graphical-session.target
+PartOf=conky.target
+
+[Service]
+Type=simple
+ExecStart=%h/.config/conky/bin/conky-launch.sh %i
+Restart=on-failure
+
+[Install]
+WantedBy=conky.target
